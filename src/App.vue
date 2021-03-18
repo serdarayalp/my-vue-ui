@@ -1,7 +1,14 @@
 <template>
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 
-   Hallo, {{full_name}}
+  Hallo, {{ full_name }}
+
+  <br />
+
+  <navigation-link url="http://www.google.de">Zur Info</navigation-link>
+
+  <br />
+  <a href="?seite=123" @click.right.prevent="test">Gehe zur Seite 23</a>
 
   <ToDoList />
 
@@ -10,8 +17,8 @@
 </template>
 
 <script>
-
-import ToDoList from './components/ToDoList'
+import ToDoList from "./components/ToDoList";
+import NavigationLink from "./components/NavigationLink";
 
 export default {
   name: "App",
@@ -19,7 +26,7 @@ export default {
     vorname: "Serdar",
     nachname: "Ayalp",
     alter: 40,
-    gender: "männlich"
+    gender: "männlich",
   }),
   computed: {
     full_name() {
@@ -32,14 +39,14 @@ export default {
     },
   },
   components: {
-    ToDoList
-  }
+    ToDoList,
+    NavigationLink,
+  },
 };
 </script>
 
 <style>
-
- @import './assets/main.css';
+@import "./assets/main.css";
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
